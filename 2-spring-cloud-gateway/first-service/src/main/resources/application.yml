@@ -1,10 +1,15 @@
 server:
-  port: 8081
+  port: 0
 spring:
   application:
     name: my-first-service
 
 eureka:
   client:
-    fetch-registry: false
-    register-with-eureka: false
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    # 0 포트(랜덤포트) 이용시 유레카 서비스에 1개로 표시되어 인스턴스 아이디 추가 필요
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
