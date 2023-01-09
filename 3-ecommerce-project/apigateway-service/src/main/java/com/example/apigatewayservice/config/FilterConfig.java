@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 //@Configuration
+// route 설정을 java 코드로 작성한것, 사용하지 않음
 public class FilterConfig {
 
 //  @Bean
